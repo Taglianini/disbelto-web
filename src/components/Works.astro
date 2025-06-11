@@ -1,0 +1,58 @@
+---
+import Masbtn from "../assets/desktop/Masbtn.astro";
+import WorksMobile from "../assets/mobile/WorksMobile.astro";
+
+---
+<div id="WORKS" class="hidden md:flex justify-center py-16 px-4">
+  <div class="w-full max-w-[1420px] grid gap-8">
+    <div class="relative rounded-[20px] overflow-hidden">
+      <img
+        src="/Client1.jpg"
+        alt="Cliente principal"
+        class="w-full h-[500px] object-cover"
+      />
+      <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-[#93FF57] text-[#13131E] text-sm font-semibold px-6 py-2 rounded-full shadow-lg">
+        NOMBRE DEL CLIENTE
+      </div>
+      <div class="absolute bottom-6 right-6 flex items-center gap-2">
+        <Masbtn />
+        <a class="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 cursor-pointer border border-[#FFACE4] rounded-full text-[#FFACE4] text-xl hover:text-[#13131E] hover:bg-[#FFACE4]">+</a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8">
+      <div class="relative rounded-[20px] overflow-hidden">
+        <img
+          src="/Client2.jpg"
+          alt="Cliente 1"
+          class="w-full h-[350px] object-cover"
+        />
+        <div class="absolute bottom-6 left-6 border border-[#FFACE4] text-[#FFACE4] text-sm px-5 py-1 rounded-full">
+          NOMBRE
+        </div>
+        <div class="absolute bottom-6 right-6 flex items-center gap-2">
+          <Masbtn />
+          <a class="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 cursor-pointer border border-[#FFACE4] rounded-full text-[#FFACE4] text-xl hover:text-[#13131E] hover:bg-[#FFACE4]">+</a>
+        </div>
+      </div>
+
+      <div class="relative rounded-[20px] overflow-hidden">
+        <img
+          src="/Client3.jpg"
+          alt="Cliente 2"
+          class="w-full h-[350px] object-cover"
+        />
+        <div class="absolute bottom-6 left-6 border border-[#FFACE4] text-[#FFACE4] text-sm px-5 py-1 rounded-full">
+          NOMBRE
+        </div>
+        <div class="absolute bottom-6 right-6 flex items-center gap-2">
+          <Masbtn />
+          <a class="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 cursor-pointer border border-[#FFACE4] rounded-full text-[#FFACE4] text-xl hover:text-[#13131E] hover:bg-[#FFACE4]">+</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Carrusel solo para móviles -->
+<WorksMobile />

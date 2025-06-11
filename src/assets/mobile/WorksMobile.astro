@@ -1,0 +1,92 @@
+---
+import Vermasbtn from "./Vermasbtn.astro";
+import Masbtn from "./Masbtn.astro";
+
+---
+ <div class="block md:hidden relative px-4 py-10">
+
+  <!-- Contenedor del carrusel -->
+  <div id="carouselMobile" class="overflow-hidden rounded-[30px] relative">
+    <div id="slides" class="flex transition-transform duration-500 ease-in-out">
+      <!-- Slide 1 -->
+      <div class="min-w-full relative">
+        <img src="/Client1.jpg" class="w-[350px] h-[250px] object-cover rounded-[20px]" alt="Cliente 1" />
+        <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-[#93FF57] text-[#13131E] text-xs font-semibold px-4 py-1.5 rounded-full shadow-md">
+          CLIENTE 1
+        </div>
+       <div class="absolute bottom-4 right-4 flex items-center gap-2">
+        <!-- Contenedor oscuro detrás de los botones -->
+        <div class="absolute -inset-2 bg-black/40 backdrop-blur-md rounded-full z-[-1]"></div>
+          <Vermasbtn />
+          <Masbtn />
+      </div>
+
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="min-w-full relative">
+        <img src="/Client2.jpg" class="w-[350px] h-[250px] object-cover rounded-[20px]" alt="Cliente 2" />
+        <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-[#93FF57] text-[#13131E] text-xs font-semibold px-4 py-1.5 rounded-full shadow-md">
+          CLIENTE 2
+        </div>
+        <div class="absolute bottom-4 right-4 flex items-center gap-2">
+          <Vermasbtn />
+          <Masbtn />
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="min-w-full relative">
+        <img src="/Client3.jpg" class="w-[350px] h-[250px] object-cover rounded-[20px]" alt="Cliente 3" />
+        <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-[#93FF57] text-[#13131E] text-xs font-semibold px-4 py-1.5 rounded-full shadow-md">
+          CLIENTE 3
+        </div>
+        <div class="absolute bottom-4 right-4 flex items-center gap-2">
+          <Vermasbtn />
+          <Masbtn />
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón anterior -->
+    <button id="prevBtn" class="absolute top-1/2 left-2 -translate-y-1/2 bg-white backdrop-blur-md w-9 h-9 flex items-center justify-center rounded-full shadow">
+      <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <!-- Botón siguiente -->
+    <button id="nextBtn" class="absolute top-1/2 right-2 -translate-y-1/2 bg-white backdrop-blur-md w-9 h-9 flex items-center justify-center rounded-full shadow">
+      <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+</div>
+<!-- JavaScript del carrusel -->
+<script>
+  let slides: HTMLElement | null = null;
+let currentSlide = 0;
+
+document.addEventListener("DOMContentLoaded", function () {
+  slides = document.getElementById("slides");
+  if (!slides) return;
+
+  const totalSlides = slides.children.length;
+
+  function updateSlide() {
+    slides!.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  document.getElementById("nextBtn")?.addEventListener("click", function () {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlide();
+  });
+
+  document.getElementById("prevBtn")?.addEventListener("click", function () {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlide();
+  });
+});
+</script>
+</div>

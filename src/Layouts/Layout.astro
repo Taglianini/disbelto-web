@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from "astro:transitions";
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/styles/global.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<meta name="generator" content="{Astro.generator}" />
+		<title>{title}</title>
+		<ClientRouter />
+	</head>
+	<body>
+		<main class="relative h-screen bg-no-repeat bg-cover bg-[center_10%] sm:bg-[url('/disbelto_buho.png')]">
+			<div class="absolute inset-0 text-white px-6 py-12 sm:px-60 sm:py-20">
+			<slot />
+			</div>
+		</main>
+	</body>
+</html>
