@@ -1,11 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 @import "tailwindcss";
-
 @tailwind utilities;
 
 body {
-     @apply bg-[#13131E] text-white font-['Space_Mono'] min-h-screen;
+     @apply bg-[#13131E] text-[#EEEFFF] font-['Space_Mono'] min-h-screen;
  }
  
  h1 {
@@ -19,5 +16,5 @@ body {
     @apply py-2 bg-[#1A1A2E] shadow-lg rounded-4xl;
  }
  main {
-    @apply pt-20 items-center justify-center flex flex-col;
+    @apply pt-10 flex flex-col items-center;
 }
